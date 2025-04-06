@@ -7,7 +7,9 @@ def main():
     df = load_data(spark, "dataset/global_housing_market_extended.csv")
     cleaned_df = clean_data(df)
     show_data(cleaned_df)
+    # print the schema of the dataframe
     print(cleaned_df.printSchema())
+    # print country columns
     print(cleaned_df.select("Country").show())
     spark.stop()
 
